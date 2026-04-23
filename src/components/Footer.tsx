@@ -32,7 +32,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm font-semibold">
             <li><Link to="/subscribe" className="hover:text-white">Country Boxes</Link></li>
             <li><Link to="/shop" className="hover:text-white">The Shop</Link></li>
-            <li><Link to="/subscribe" className="hover:text-white">Give a Gift</Link></li>
+            <li><Link to="/gift" className="hover:text-white">Give a Gift</Link></li>
           </ul>
         </div>
         <div>

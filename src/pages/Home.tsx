@@ -37,7 +37,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/join" className="btn-navy text-base">Start Your Adventure</Link>
-              <Link to="/subscribe" className="btn-outline-navy text-base">Give A Gift</Link>
+              <Link to="/gift" className="btn-outline-navy text-base">Give A Gift</Link>
             </div>
             <div className="mt-6 flex items-center gap-2 text-navy-800 font-bold">
               <span className="text-navy-700 tracking-tight">★★★★★</span>

@@ -15,12 +15,14 @@ import AdminProducts from './pages/admin/AdminProducts'
 import AdminOrders from './pages/admin/AdminOrders'
 import NotFound from './pages/NotFound'
 import Join from './pages/Join'
+import Gift from './pages/Gift'
 
 export default function App() {
   return (
     <Routes>
-      {/* Standalone onboarding wizard (no main navbar) */}
+      {/* Standalone onboarding wizards (no main navbar) */}
       <Route path="/join" element={<Join />} />
+      <Route path="/gift" element={<Gift />} />
 
       <Route element={<Layout />}>
         <Route index element={<Home />} />

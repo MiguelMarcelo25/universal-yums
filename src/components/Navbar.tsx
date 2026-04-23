@@ -65,7 +65,7 @@ export default function Navbar() {
           <Link to="/join" className="hidden sm:inline-flex btn-primary !py-2.5 !px-5 text-sm">
             Get Started
           </Link>
-          <Link to="/subscribe" className="hidden md:inline-flex btn-navy !py-2.5 !px-5 text-sm">
+          <Link to="/gift" className="hidden md:inline-flex btn-navy !py-2.5 !px-5 text-sm">
             Give A Gift
           </Link>
           <Link to="/cart" className="relative p-2 rounded-full hover:bg-navy-50 text-navy-700">

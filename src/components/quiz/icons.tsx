@@ -156,6 +156,55 @@ export const IconCompass = (p: IconProps) => (
   </svg>
 )
 
+export const IconPerson = (p: IconProps) => (
+  <svg {...props(p)}>
+    <circle cx="32" cy="22" r="9" />
+    <path d="M14 52a18 18 0 0 1 36 0z" />
+  </svg>
+)
+
+export const IconCake = (p: IconProps) => (
+  <svg {...props(p)}>
+    <path d="M14 38h36v12a2 2 0 0 1-2 2H16a2 2 0 0 1-2-2z" />
+    <path d="M14 38a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4" />
+    <path d="M20 34V22M32 34V20M44 34V22" />
+    <path d="M18 18c0-2 2-4 2-4s2 2 2 4-1 3-2 3-2-1-2-3zM30 16c0-2 2-4 2-4s2 2 2 4-1 3-2 3-2-1-2-3zM42 18c0-2 2-4 2-4s2 2 2 4-1 3-2 3-2-1-2-3z" fill="currentColor" />
+  </svg>
+)
+
+export const IconAnniversary = (p: IconProps) => (
+  <svg {...props(p)}>
+    <rect x="10" y="14" width="44" height="40" rx="3" />
+    <path d="M10 24h44M20 10v8M44 10v8" />
+    <path d="M32 46c-6-3-10-7-10-12a4 4 0 0 1 10-2 4 4 0 0 1 10 2c0 5-4 9-10 12z" fill="currentColor" />
+  </svg>
+)
+
+export const IconThankYou = (p: IconProps) => (
+  <svg {...props(p)}>
+    <path d="M16 40c-2-4-2-10 2-14l4 2v-6a3 3 0 0 1 6 0v6l4-2c4 4 4 10 2 14-2 6-8 12-18 12z" />
+    <path d="M48 40c2-4 2-10-2-14l-4 2v-6a3 3 0 0 0-6 0v6l-4-2c-4 4-4 10-2 14 2 6 8 12 18 12z" />
+    <path d="M32 24c-2-2-2-5 0-7s4-2 6 0" fill="none" />
+    <path d="M26 18c-1-2 1-4 3-4s3 1 3 3c0-2 1-3 3-3s4 2 3 4-6 5-6 5-5-3-6-5z" fill="currentColor" />
+  </svg>
+)
+
+export const IconGlasses = (p: IconProps) => (
+  <svg {...props(p)}>
+    <path d="M18 10l-6 20a10 10 0 0 0 20 0l-6-20z" />
+    <path d="M36 16l-4 18a9 9 0 0 0 18 0l-4-18z" />
+    <path d="M22 40v12M14 54h16M42 48v4M36 56h14" />
+  </svg>
+)
+
+export const IconMystery = (p: IconProps) => (
+  <svg {...props(p)}>
+    <rect x="10" y="24" width="44" height="28" rx="2" />
+    <path d="M8 18h48v8H8zM32 18v34" />
+    <path d="M28 12c-4 0-6-4-4-6s6 0 8 4c0-4 4-6 8-4s0 6-4 6M22 28v0M32 30s2-4 5-4 5 2 5 5-5 4-5 8M37 44v2" strokeWidth="2.5" />
+  </svg>
+)
+
 export const icons = {
   cloche: IconCloche,
   ramen: IconRamen,
@@ -175,6 +224,12 @@ export const icons = {
   chat: IconChat,
   globeSearch: IconGlobeSearch,
   compass: IconCompass,
+  person: IconPerson,
+  cake: IconCake,
+  anniversary: IconAnniversary,
+  thankYou: IconThankYou,
+  glasses: IconGlasses,
+  mystery: IconMystery,
 }
 
 export type IconKey = keyof typeof icons
