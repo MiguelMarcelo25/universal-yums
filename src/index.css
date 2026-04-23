@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-navy-900;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-white antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-bold transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-navy-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-ketchup-500 text-white hover:bg-ketchup-600 shadow-ketchup;
+  }
+  .btn-navy {
+    @apply btn bg-navy-600 text-white hover:bg-navy-700 shadow-pop;
+  }
+  .btn-outline-navy {
+    @apply btn bg-white text-navy-700 border-2 border-navy-600 hover:bg-navy-50;
+  }
+  .btn-dark {
+    @apply btn bg-navy-900 text-white hover:bg-navy-800;
+  }
+  .card {
+    @apply bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-navy-100;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-navy-100 text-navy-700 px-3 py-1 text-xs font-bold uppercase tracking-wide;
+  }
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.flag-bg {
+  background:
+    radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.5), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.12), transparent 60%);
+}
+
+.hero-yellow {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 40%, #ffe77a 0%, #ffd93f 60%, #f5c518 100%);
+}
