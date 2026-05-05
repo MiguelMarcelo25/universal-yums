@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { useAuth } from '../context/AuthContext'
 import { getOrdersForUser } from '../lib/api'
 import type { Order } from '../types'
 import { formatPrice } from '../lib/format'
+import Confetti from '../components/motion/Confetti'
 
 export default function Orders() {
   const { user } = useAuth()
@@ -21,13 +23,25 @@ export default function Orders() {
   return (
     <div className="container-page py-12">
       {welcome && (
-        <div className="mb-6 rounded-3xl p-6 bg-gradient-to-r from-navy-600 to-ketchup-500 text-white flex items-center gap-4">
-          <div className="text-4xl">🎉</div>
-          <div>
-            <p className="font-bold">Order placed!</p>
+        <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+          className="relative overflow-hidden mb-6 rounded-3xl p-6 bg-gradient-to-r from-navy-600 to-ketchup-500 text-white flex items-center gap-4"
+        >
+          <Confetti count={50} />
+          <motion.div
+            className="text-4xl relative"
+            animate={{ rotate: [0, -15, 15, -10, 10, 0] }}
+            transition={{ duration: 1.2, delay: 0.2 }}
+          >
+            🎉
+          </motion.div>
+          <div className="relative">
+            <p className="font-display font-bold text-lg">Order placed!</p>
             <p className="text-white/90 text-sm">Thanks for your order — your box is on the way.</p>
           </div>
-        </div>
+        </motion.div>
       )}
       <h1 className="font-display font-black text-4xl">Your orders</h1>
 

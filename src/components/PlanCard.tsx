@@ -1,10 +1,13 @@
+import { motion } from 'framer-motion'
 import type { Plan } from '../types'
 import { formatPrice } from '../lib/format'
 import { Link } from 'react-router-dom'
 
 export default function PlanCard({ plan, highlighted }: { plan: Plan; highlighted?: boolean }) {
   return (
-    <div
+    <motion.div
+      whileHover={{ y: -8, scale: highlighted ? 1.05 : 1.02 }}
+      transition={{ type: 'spring', stiffness: 240, damping: 18 }}
       className={`relative rounded-3xl p-8 flex flex-col ${
         highlighted
           ? 'bg-navy-600 text-white shadow-pop scale-[1.02]'
@@ -12,13 +15,16 @@ export default function PlanCard({ plan, highlighted }: { plan: Plan; highlighte
       }`}
     >
       {plan.badge && (
-        <span
+        <motion.span
+          initial={{ scale: 0, rotate: -20 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: 'spring', stiffness: 200, damping: 12, delay: 0.2 }}
           className={`absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 text-xs font-bold rounded-full ${
             highlighted ? 'bg-sunny-400 text-navy-800' : 'bg-ketchup-500 text-white'
           }`}
         >
           {plan.badge}
-        </span>
+        </motion.span>
       )}
       <h3 className="font-display font-bold text-3xl">{plan.name}</h3>
       <p className={`mt-2 text-sm font-semibold ${highlighted ? 'text-white/90' : 'text-navy-700'}`}>
@@ -34,12 +40,14 @@ export default function PlanCard({ plan, highlighted }: { plan: Plan; highlighte
         <li className="flex gap-2"><span>✔</span> Free shipping in the US</li>
         <li className="flex gap-2"><span>✔</span> Cancel anytime</li>
       </ul>
-      <Link
-        to={`/checkout?plan=${plan.slug}`}
-        className={`mt-auto text-center ${highlighted ? 'btn bg-white text-navy-700 hover:bg-navy-50' : 'btn-primary'}`}
-      >
-        Subscribe
-      </Link>
-    </div>
+      <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} className="mt-auto">
+        <Link
+          to={`/checkout?plan=${plan.slug}`}
+          className={`text-center block ${highlighted ? 'btn bg-white text-navy-700 hover:bg-navy-50' : 'btn-primary'}`}
+        >
+          Subscribe
+        </Link>
+      </motion.div>
+    </motion.div>
   )
 }

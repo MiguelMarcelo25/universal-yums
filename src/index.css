@@ -53,3 +53,27 @@
   background:
     radial-gradient(ellipse 80% 60% at 20% 40%, #ffe77a 0%, #ffd93f 60%, #f5c518 100%);
 }
+
+/* Marquee track helper — paired with `animate-marquee` on the inner row */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+}
+
+/* Pause marquee/animation on hover */
+.pause-on-hover:hover * {
+  animation-play-state: paused !important;
+}
+
+/* Honor user's reduced-motion preference — disable all keyframe animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
