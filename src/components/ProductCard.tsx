@@ -35,8 +35,11 @@ export default function ProductCard({ product }: { product: Product }) {
             whileHover={{ scale: 1.18, rotate: 8 }}
             transition={{ type: 'spring', stiffness: 200, damping: 14 }}
           >
-            {product.country?.flag_emoji || '🍬'}
+            {product.emoji || product.country?.flag_emoji || '🍬'}
           </motion.div>
+          {product.country?.flag_emoji && (
+            <span className="absolute top-3 right-3 text-2xl drop-shadow">{product.country.flag_emoji}</span>
+          )}
           {product.featured && (
             <span className="absolute top-3 left-3 bg-white/95 backdrop-blur text-navy-700 text-xs font-bold px-2.5 py-1 rounded-full">
               ⭐ Featured

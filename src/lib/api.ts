@@ -61,7 +61,11 @@ export async function getProducts(opts?: { countrySlug?: string; search?: string
   if (opts?.countrySlug) list = list.filter((p) => p.country?.slug === opts.countrySlug)
   if (opts?.search) {
     const s = opts.search.toLowerCase()
-    list = list.filter((p) => p.name.toLowerCase().includes(s))
+    list = list.filter(
+      (p) =>
+        p.name.toLowerCase().includes(s) ||
+        p.description.toLowerCase().includes(s),
+    )
   }
   return list
 }

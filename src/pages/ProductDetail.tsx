@@ -45,8 +45,11 @@ export default function ProductDetail() {
       <Link to="/shop" className="text-sm text-gray-600 hover:text-ketchup-600">← Back to shop</Link>
 
       <div className="mt-6 grid md:grid-cols-2 gap-12">
-        <div className="aspect-square rounded-3xl bg-gradient-to-br from-sunny-300 to-sunny-500 flag-bg grid place-items-center text-[12rem] shadow-pop">
-          {product.country?.flag_emoji || '🍬'}
+        <div className="aspect-square rounded-3xl bg-gradient-to-br from-sunny-300 to-sunny-500 flag-bg grid place-items-center text-[12rem] shadow-pop relative">
+          <span>{product.emoji || product.country?.flag_emoji || '🍬'}</span>
+          {product.country?.flag_emoji && product.emoji && (
+            <span className="absolute top-6 right-6 text-5xl drop-shadow-lg">{product.country.flag_emoji}</span>
+          )}
         </div>
 
         <div className="flex flex-col">

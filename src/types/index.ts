@@ -29,6 +29,8 @@ export type Product = {
   slug: string
   description: string
   image_url: string
+  /** Optional per-product emoji (e.g. 🍵 for matcha). Falls back to the country flag when absent. */
+  emoji?: string
   price_cents: number
   stock: number
   featured: boolean
